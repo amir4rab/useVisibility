@@ -1,0 +1,1 @@
+a simple react hook which returns visibility of the main document element, based on [Harnessing the Page Visibility API with React blog](https://blog.sethcorker.com/harnessing-the-page-visibility-api-with-react/) and Visibility change api.

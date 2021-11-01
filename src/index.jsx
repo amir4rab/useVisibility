@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 const getDocumentHiddenProp = _ => {
-  if (typeof document.hidden !== "undefined") return "hidden";
-  if (typeof document.msHidden !== "undefined") return "msHidden";
-  if (typeof document.webkitHidden !== "undefined") return "webkitHidden";
+  if (typeof document.hidden !== 'undefined') return 'hidden';
+  if (typeof document.msHidden !== 'undefined') return 'msHidden';
+  if (typeof document.webkitHidden !== 'undefined') return 'webkitHidden';
 };
 
 const getIsDocumentHidden = _ => {
@@ -18,9 +18,9 @@ const useVisibility = _ => {
   };
 
   useEffect( _ => {
-    document.addEventListener("visibilitychange", toggleVisibility);
+    document.addEventListener('visibilitychange', toggleVisibility);
     return () => {
-      document.removeEventListener("visibilitychange", toggleVisibility);
+      document.removeEventListener('visibilitychange', toggleVisibility);
     };
   }, []);
 

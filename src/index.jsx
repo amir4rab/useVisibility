@@ -7,7 +7,8 @@ const getDocumentHiddenProp = _ => {
 };
 
 const getIsDocumentHidden = _ => {
-  return !document[getDocumentHiddenProp()];
+  if( typeof document !== 'undefined' ) return !document[getDocumentHiddenProp()];
+  return false;
 };
 
 const useVisibility = _ => {
@@ -18,9 +19,9 @@ const useVisibility = _ => {
   };
 
   useEffect( _ => {
-    document.addEventListener('visibilitychange', toggleVisibility);
+    if( typeof document !== 'undefined' ) document.addEventListener('visibilitychange', toggleVisibility);
     return () => {
-      document.removeEventListener('visibilitychange', toggleVisibility);
+      if( typeof document !== 'undefined' ) document.removeEventListener('visibilitychange', toggleVisibility);
     };
   }, []);
 
